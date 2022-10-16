@@ -1,0 +1,16 @@
+{
+  "name": "ble-keybr-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@abandonware/noble": "^1.9.2-15",
+    "express": "^4.18.2",
+    "js-yaml": "^4.1.0"
+  }
+}
