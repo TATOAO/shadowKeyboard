@@ -1,16 +1,24 @@
 
 
 var xmlHttp = new XMLHttpRequest();
-var theUrl = "http://localhost:8340/key=j"
-function updateReadout(pressedKeys){
+var theUrl = "http://localhost:8340/h?key="
+function pressKey(pressedKeys){
 
-	console.log(pressedKeys);
-	xmlHttp.open( "GET", theUrl+pressedKeys, true ); // false for synchronous request
+	console.log("just being pressed", pressedKeys);
+	const send_query = theUrl + pressedKeys.join("&key=");
+	console.log(send_query);
+	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
   xmlHttp.send( "hhhhhh");
-	console.log("open is done");
 	// return xmlHttp.responseText;
 
 };
 
-keyboardJS.bind(e => updateReadout(e.pressedKeys), e => updateReadout(e.pressedKeys));
+
+// only triggered when release
+function currentKey(pressedKeys){
+	console.log("current keys being holding", pressedKeys);
+
+}
+
+keyboardJS.bind(e => pressKey(e.pressedKeys), e => currentKey(e.pressedKeys));
 

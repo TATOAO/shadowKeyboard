@@ -1,0 +1,374 @@
+code_key:
+  '1': Keyboard ErrorRollOver
+  '2': Keyboard POSTFail
+  '3': Keyboard ErrorUndefined
+  '4': Keyboard a and A
+  '5': Keyboard b and B
+  '6': Keyboard c and C
+  '7': Keyboard d and D
+  '8': Keyboard e and E
+  '9': Keyboard f and F
+  '10': Keyboard g and G
+  '11': Keyboard h and H
+  '12': Keyboard i and I
+  '13': Keyboard j and J
+  '14': Keyboard k and K
+  '15': Keyboard l and L
+  '16': Keyboard m and M
+  '17': Keyboard n and N
+  '18': Keyboard o and O
+  '19': Keyboard p and P
+  '20': Keyboard q and Q
+  '21': Keyboard r and R
+  '22': Keyboard s and S
+  '23': Keyboard t and T
+  '24': Keyboard u and U
+  '25': Keyboard v and V
+  '26': Keyboard w and W
+  '27': Keyboard x and X
+  '28': Keyboard y and Y
+  '29': Keyboard z and Z
+  '30': Keyboard 1 and !
+  '31': Keyboard 2 and @
+  '32': 'Keyboard 3 and #'
+  '33': Keyboard 4 and $
+  '34': Keyboard 5 and %
+  '35': Keyboard 6 and ^
+  '36': Keyboard 7 and &
+  '37': Keyboard 8 and *
+  '38': Keyboard 9 and (
+  '39': Keyboard 0 and )
+  '40': Keyboard Return (ENTER)
+  '41': Keyboard ESCAPE
+  '42': Keyboard DELETE (Backspace)
+  '43': Keyboard Tab
+  '44': Keyboard Spacebar
+  '45': Keyboard - and (underscore)
+  '46': Keyboard = and +
+  '47': Keyboard [ and {
+  '48': Keyboard ] and }
+  '49': Keyboard  and |
+  '50': 'Keyboard Non-US # and ~'
+  '51': 'Keyboard ; and :'
+  '52': Keyboard ' and "
+  '53': Keyboard Grave Accent and Tilde
+  '54': Keyboard, and <
+  '55': Keyboard . and >
+  '56': Keyboard / and ?
+  '57': Keyboard Caps Lock
+  '58': Keyboard F1
+  '59': Keyboard F2
+  '60': Keyboard F3
+  '61': Keyboard F4
+  '62': Keyboard F5
+  '63': Keyboard F6
+  '64': Keyboard F7
+  '65': Keyboard F8
+  '66': Keyboard F9
+  '67': Keyboard F10
+  '68': Keyboard F11
+  '69': Keyboard F12
+  '70': Keyboard PrintScreen
+  '71': Keyboard Scroll Lock
+  '72': Keyboard Pause
+  '73': Keyboard Insert
+  '74': Keyboard Home
+  '75': Keyboard PageUp
+  '76': Keyboard Delete Forward
+  '77': Keyboard End
+  '78': Keyboard PageDown
+  '79': Keyboard RightArrow
+  '80': Keyboard LeftArrow
+  '81': Keyboard DownArrow
+  '82': Keyboard UpArrow
+  '83': Keypad Num Lock and Clear
+  '84': Keypad /
+  '85': Keypad *
+  '86': Keypad -
+  '87': Keypad +
+  '88': Keypad ENTER
+  '89': Keypad 1 and End
+  '90': Keypad 2 and Down Arrow
+  '91': Keypad 3 and PageDn
+  '92': Keypad 4 and Left Arrow
+  '93': Keypad 5
+  '94': Keypad 6 and Right Arrow
+  '95': Keypad 7 and Home
+  '96': Keypad 8 and Up Arrow
+  '97': Keypad 9 and PageUp
+  '98': Keypad 0 and Insert
+  '99': Keypad . and Delete
+  '100': Keyboard Non-US  and |
+  '101': Keyboard Application
+  '102': Keyboard Power
+  '103': Keypad =
+  '104': Keyboard F13
+  '105': Keyboard F14
+  '106': Keyboard F15
+  '107': Keyboard F16
+  '108': Keyboard F17
+  '109': Keyboard F18
+  '110': Keyboard F19
+  '111': Keyboard F20
+  '112': Keyboard F21
+  '113': Keyboard F22
+  '114': Keyboard F23
+  '115': Keyboard F24
+  '116': Keyboard Execute
+  '117': Keyboard Help
+  '118': Keyboard Menu
+  '119': Keyboard Select
+  '120': Keyboard Stop
+  '121': Keyboard Again
+  '122': Keyboard Undo
+  '123': Keyboard Cut
+  '124': Keyboard Copy
+  '125': Keyboard Paste
+  '126': Keyboard Find
+  '127': Keyboard Mute
+  '128': Keyboard Volume Up
+  '129': Keyboard Volume Down
+  '130': Keyboard Locking Caps Lock
+  '131': Keyboard Locking Num Lock
+  '132': Keyboard Locking Scroll Lock
+  '133': Keypad Comma
+  '134': Keypad Equal Sign
+  '135': Keyboard International1
+  '136': Keyboard International2
+  '137': Keyboard International3
+  '138': Keyboard International4
+  '139': Keyboard International5
+  '140': Keyboard International6
+  '141': Keyboard International7
+  '142': Keyboard International8
+  '143': Keyboard International9
+  '144': Keyboard LANG1
+  '145': Keyboard LANG2
+  '146': Keyboard LANG3
+  '147': Keyboard LANG4
+  '149': Keyboard LANG5
+  '151': Keyboard LANG8
+  '152': Keyboard LANG9
+  '153': Keyboard Alternate Erase
+  '154': Keyboard SysReq/Attention
+  '155': Keyboard Cancel
+  '156': Keyboard Clear
+  '157': Keyboard Prior
+  '158': Keyboard Return
+  '159': Keyboard Separator
+  '160': Keyboard Out
+  '161': Keyboard Oper
+  '162': Keyboard Clear/Again
+  '163': Keyboard CrSel/Props
+  '164': Keyboard ExSel
+  '224': Keyboard LeftControl
+  '225': Keyboard LeftShift
+  '226': Keyboard LeftAlt
+  '227': Keyboard Left GUI
+  '228': Keyboard RightControl
+  '229': Keyboard RightShift
+  '230': Keyboard RightAlt
+  '231': Keyboard Right GUI
+  1x95: Keyboard LANG6
+  1x96: Keyboard LANG7
+key_code:
+  Keyboard ErrorRollOver: '1'
+  Keyboard POSTFail: '2'
+  Keyboard ErrorUndefined: '3'
+  a: '4'
+  b: '5'
+  c: '6'
+  d: '7'
+  e: '8'
+  f: '9'
+  g: '10'
+  h: '11'
+  i: '12'
+  j: '13'
+  k: '14'
+  l: '15'
+  m: '16'
+  n: '17'
+  o: '18'
+  p: '19'
+  q: '20'
+  r: '21'
+  s: '22'
+  t: '23'
+  u: '24'
+  v: '25'
+  w: '26'
+  x: '27'
+  y: '28'
+  z: '29'
+  1: '30'
+  2: '31'
+  3: '32'
+  4: '33'
+  5: '34'
+  6: '35'
+  7: '36'
+  8: '37'
+  9: '38'
+  0: '39'
+  enter: '40'
+  esc: '41'
+  backspace: '42'
+  tab: '43'
+  spacebar: '44'
+  '-': '45'
+  =: '46'
+  '[': '47'
+  ']': '48'
+  "\\": '49'
+  'Keyboard Non-US # and ~': '50' # can just ignore
+  ';': '51'
+  "'": '52'
+  "`": '53'
+  ',': '54'
+  '.': '55'
+  '/': '56'
+  Caps Lock: '57'
+  F1: '58'
+  F2: '59'
+  F3: '60'
+  F4: '61'
+  F5: '62'
+  F6: '63'
+  F7: '64'
+  F8: '65'
+  F9: '66'
+  F10: '67'
+  F11: '68'
+  F12: '69'
+  PrintScreen: '70'
+  Scroll Lock: '71'
+  Pause: '72'
+  Insert: '73'
+  Home: '74'
+  PageUp: '75'
+  Delete Forward: '76'
+  End: '77'
+  PageDown: '78'
+  right: '79'
+  left: '80'
+  down: '81'
+  up: '82'
+  Keypad Num Lock and Clear: '83'
+  Keypad /: '84'
+  Keypad *: '85'
+  Keypad -: '86'
+  Keypad +: '87'
+  Keypad ENTER: '88'
+  Keypad 1 and End: '89'
+  Keypad 2 and Down Arrow: '90'
+  Keypad 3 and PageDn: '91'
+  Keypad 4 and Left Arrow: '92'
+  Keypad 5: '93'
+  Keypad 6 and Right Arrow: '94'
+  Keypad 7 and Home: '95'
+  Keypad 8 and Up Arrow: '96'
+  Keypad 9 and PageUp: '97'
+  Keypad 0 and Insert: '98'
+  Keypad . and Delete: '99'
+  Keyboard Non-US  and |: '100'
+  Keyboard Application: '101'
+  Keyboard Power: '102'
+  Keypad =: '103'
+  Keyboard F13: '104'
+  Keyboard F14: '105'
+  Keyboard F15: '106'
+  Keyboard F16: '107'
+  Keyboard F17: '108'
+  Keyboard F18: '109'
+  Keyboard F19: '110'
+  Keyboard F20: '111'
+  Keyboard F21: '112'
+  Keyboard F22: '113'
+  Keyboard F23: '114'
+  Keyboard F24: '115'
+  Keyboard Execute: '116'
+  Keyboard Help: '117'
+  Keyboard Menu: '118'
+  Keyboard Select: '119'
+  Keyboard Stop: '120'
+  Keyboard Again: '121'
+  Keyboard Undo: '122'
+  Keyboard Cut: '123'
+  Keyboard Copy: '124'
+  Keyboard Paste: '125'
+  Keyboard Find: '126'
+  Keyboard Mute: '127'
+  Keyboard Volume Up: '128'
+  Keyboard Volume Down: '129'
+  Keyboard Locking Caps Lock: '130'
+  Keyboard Locking Num Lock: '131'
+  Keyboard Locking Scroll Lock: '132'
+  Keypad Comma: '133'
+  Keypad Equal Sign: '134'
+  Keyboard International1: '135'
+  Keyboard International2: '136'
+  Keyboard International3: '137'
+  Keyboard International4: '138'
+  Keyboard International5: '139'
+  Keyboard International6: '140'
+  Keyboard International7: '141'
+  Keyboard International8: '142'
+  Keyboard International9: '143'
+  Keyboard LANG1: '144'
+  Keyboard LANG2: '145'
+  Keyboard LANG3: '146'
+  Keyboard LANG4: '147'
+  Keyboard LANG5: '149'
+  Keyboard LANG8: '151'
+  Keyboard LANG9: '152'
+  Keyboard Alternate Erase: '153'
+  Keyboard SysReq/Attention: '154'
+  Keyboard Cancel: '155'
+  Keyboard Clear: '156'
+  Keyboard Prior: '157'
+  Keyboard Return: '158'
+  Keyboard Separator: '159'
+  Keyboard Out: '160'
+  Keyboard Oper: '161'
+  Keyboard Clear/Again: '162'
+  Keyboard CrSel/Props: '163'
+  Keyboard ExSel: '164'
+  modifier: '224'
+  Keyboard LeftShift: '225'
+  Keyboard LeftAlt: '226'
+  Keyboard Left GUI: '227'
+  Keyboard RightControl: '228'
+  Keyboard RightShift: '229'
+  Keyboard RightAlt: '230'
+  Keyboard Right GUI: '231'
+  Keyboard LANG6: 1x95
+  Keyboard LANG7: 1x96
+  duplicated_parirs: 
+    - 'one'
+    - 'two'
+    - 'three'
+    - 'four'
+    - 'five'
+    - 'six'
+    - 'seven'
+    - 'eight'
+    - 'nine'
+    - 'zero'
+    - 'dash'
+    - 'equal'
+    - 'equalsign'
+    - 'command'
+    - 'windows'
+    - 'super'
+    - 'win'
+    - 'rightwin'
+    - 'rightcommand'
+    - 'rightwindows'
+    - 'rightwin'
+    - 'rightsuper'
+    - 'mod'
+    - 'rightwin'
+    - 'rightwin'
+    - 'rightwin'
+    - 'rightwin'
