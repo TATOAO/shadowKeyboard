@@ -334,7 +334,7 @@ key_code:
   Keyboard Clear/Again: '162'
   Keyboard CrSel/Props: '163'
   Keyboard ExSel: '164'
-  modifier: '224'
+  control: '224'
   Keyboard LeftShift: '225'
   Keyboard LeftAlt: '226'
   Keyboard Left GUI: '227'

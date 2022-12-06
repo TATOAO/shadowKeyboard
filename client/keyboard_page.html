@@ -11,6 +11,14 @@
 </head>
 
 <body>
+    <script>
+        window.addEventListener('beforeunload', (event) => {
+            event.preventDefault();
+            // Google Chrome requires returnValue to be set.
+			console.log("c-w is pressed");
+            event.returnValue = 'jjjjj';
+        });
+    </script>
 Content of the document......
 </body>
 

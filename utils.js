@@ -19,8 +19,13 @@ module.exports = {
 	test_console : (text) => {console.log(text);},
 
 
-	uniq_key: (key_array) => {
+	// parse the multiple description keys like "modifer", "command", ..
+	parse_key: (key_array) => {
 
+	},
+
+	special_past: () => {
+			console.log("special_paste");
 
 	},
 

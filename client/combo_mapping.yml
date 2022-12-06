@@ -1,0 +1,34 @@
+
+# from mac combo to windows combo
+
+# shift is the same
+mac2win:
+  "command + a" : "control + a"
+  "command + c" : "control + c"
+  "command + v" : "control + v"
+  "command + s" : "control + s"
+  "command + w" : "control + w"
+  "command + n" : "control + n"
+  "capslock"    : "control + space"
+
+  # direct duplicate map
+  "control + w" : "control + w"
+  "control + h" : "control + h"
+  "control + j" : "control + j"
+  "control + k" : "control + k"
+  "control + l" : "control + l"
+  "control + p" : "control + p"
+  "control + n" : "control + n"
+  "control + c" : "control + c"
+  "control + d" : "control + d"
+
+
+  # special function
+
+  ## paste by entering
+  "control + command + v" : "special_paste"
+  
+
+
+
+
