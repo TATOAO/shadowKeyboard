@@ -1,20 +1,20 @@
 
-window.onload = function() {
-    window.document.body.onkeydown = function() {
-        if (event.ctrlKey) {
-            event.stopPropagation();
-            event.preventDefault();
-            try {
-                event.keyCode = 0;
-            }
-            catch (event) {
-
-            }
-            return false;
-        }
-        return true;
-    }
-}
+// window.onload = function() {
+//     window.document.body.onkeydown = function() {
+//         if (event.ctrlKey) {
+//             event.stopPropagation();
+//             event.preventDefault();
+//             try {
+//                 event.keyCode = 0;
+//             }
+//             catch (event) {
+//
+//             }
+//             return false;
+//         }
+//         return true;
+//     }
+// }
 
 var theUrl = "http://localhost:8340/h?key="
 var theComboUrl = "http://localhost:8340/c?combo="
@@ -55,31 +55,6 @@ var mac2Win = {
 
 
 
-function pressKey(pressedKeys){
-
-	// console.log("just being pressed", pressedKeys);
-	const send_query = theUrl + pressedKeys.join("&key=");
-	// console.log(send_query);
-	var xmlHttp = new XMLHttpRequest();
-	console.log(pressedKeys)
-	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
-  xmlHttp.send( "hhhhhh");
-	
-};
-
-function pressCombo(pressedCombo){
-
-	console.log(pressedCombo)
-	var pressedKeys = pressedCombo.split(" + ");
-	const send_query = theComboUrl + pressedKeys.join("&combo=");
-	// console.log(send_query);
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
-  xmlHttp.send( "wdjfowdjf");
-	// return xmlHttp.responseText;
-
-};
-
 
 // only triggered when release
 function currentKey(pressedKeys){
@@ -97,6 +72,61 @@ function currentKey(pressedKeys){
 // 				pressCombo(target_map);
 // 		});
 // })
+//
+var registed_pressed = []
 
-keyboardJS.bind(e => pressKey(e.pressedKeys), e => currentKey(e.pressedKeys));
+
+var nonuse_keys = ['windows', 'win', 'super', 'leftcommand', 'leftwindows', 'leftwin', 'leftsuper', 'mod', 'modifier', 'menu', 'spacebar', 'comma', 'period', 
+	'apostrophe', 'graveaccent', 'one', 'two', 'three', 'four', 'five', 'six', 
+	'seven', 'eight', 'nine', 'zero', 'dash', 'equal', 'equalsign', 'openbracket',
+	'closebracket', 'basckslash', 'slash', 'forwardslash', 'semicolon',
+	'exclamation', 'exclamationpoint', '!', 'at', '@', 'number', '#', 
+	'dollar', 'dollars', 'dollarsign', '$', 'percent', '%',
+	'caret', '^', 'ampersand', 'and', '&', 'asterisk', '*',
+	'openparen', '(', 'closeparen', ')', 'underscore', '_',
+	'plus', '+', 'verticalbar', '|', 'questionmark', '?',
+	'closeanglebracket', '>'
+]
+// command, alt, space, enter
+
+
+function parse_nonuse_tag(listOfKeyPress){
+
+	return listOfKeyPress.filter((x) => ! (nonuse_keys.contains(x)))
+
+}
+
+
+function pressCombo(pressedCombo){
+
+	console.log(pressedCombo)
+	var pressedKeys = pressedCombo.split(" + ");
+	const send_query = theComboUrl + pressedKeys.join("&combo=");
+	// console.log(send_query);
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
+  xmlHttp.send( "wdjfowdjf");
+	// return xmlHttp.responseText;
+
+};
+
+function pressKey(pressedKeys){
+
+	// console.log("just being pressed", pressedKeys);
+	const send_query = theUrl + pressedKeys.join("&key=");
+	// console.log(send_query);
+	var xmlHttp = new XMLHttpRequest();
+	console.log(pressedKeys)
+	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
+  xmlHttp.send( "hhhhhh");
+	
+};
+
+
+function releaseKey(pressedKeys){
+
+}
+
+
+keyboardJS.bind(e => currentKey(e.pressedKeys), e => currentKey(e.pressedKeys));
 
