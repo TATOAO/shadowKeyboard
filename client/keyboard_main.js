@@ -17,9 +17,11 @@
 // }
 
 var theUrl = "http://localhost:8340/h?key="
-var theComboUrl = "http://localhost:8340/c?combo="
 var holding_keys = [];
 
+import { test_console } from './utils.js';
+console.log(test_console);
+test_console('ssssaaaadddd');
 
 var mac2Win = {
 	"command + a" : "control + a",
@@ -52,20 +54,6 @@ var mac2Win = {
   
 
 
-
-
-
-
-
-// Object.keys(mac2Win).forEach((x) => {
-// 		keyboardJS.unbind(x);
-// 		keyboardJS.bind(x, (e) => {
-// 				let target_map = mac2Win[x]
-// 				console.log(x, " => ", target_map);
-// 				pressCombo(target_map);
-// 		});
-// })
-//
 var registed_pressed = []
 
 
@@ -79,60 +67,120 @@ var nonuse_keys = ['windows', 'win', 'super', 'leftcommand', 'leftwindows', 'lef
 	'openparen', '(', 'closeparen', ')', 'underscore', '_', ':',
 	'plus', '+', 'verticalbar', '|', 'questionmark', '?',
 	'closeanglebracket', '>', 'closecurlybrace', 'closecurlybracket'
-	, '}', 'opencurlybrace', 'opencurlybracket', '{', 'quotationmark'
+	, '}', 'opencurlybrace', 'opencurlybracket', '{', 'quotationmark', 'rightcommand',
+	'rightwindows', 'rightwin', 'rightsuper', 'ins', 'del', 'escape'
 ]
 // command, alt, space, enter
 
 
-function parse_nonuse_tag(listOfKeyPress){
+function parse_nonuse_tag(listOfKeyPress) {
 
 	return listOfKeyPress.filter((x) => ! (nonuse_keys.includes(x)))
 
 }
 
 
-function pressCombo(pressedCombo){
-
-	console.log(pressedCombo)
-	var pressedKeys = pressedCombo.split(" + ");
-	const send_query = theComboUrl + pressedKeys.join("&combo=");
-	// console.log(send_query);
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
-  xmlHttp.send( "wdjfowdjf");
-	// return xmlHttp.responseText;
-
-};
+// function pressCombo(pressedCombo){
+//
+// 	console.log(pressedCombo)
+// 	var pressedKeys = pressedCombo.split(" + ");
+// 	const send_query = theComboUrl + pressedKeys.join("&combo=");
+// 	// console.log(send_query);
+// 	var xmlHttp = new XMLHttpRequest();
+// 	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
+//   xmlHttp.send( "wdjfowdjf");
+// 	// return xmlHttp.responseText;
+//
+// };
+//
 
 function pressKey(pressedKeys){
 
 	// console.log("just being pressed", pressedKeys);
-	const send_query = theUrl + pressedKeys.join("&key=");
-	// console.log(send_query);
-	// var xmlHttp = new XMLHttpRequest();
 	// console.log(pressedKeys);
 	var current_keys =  parse_nonuse_tag(pressedKeys);
 
-	current_keys.foreach((x) => {
+	current_keys.forEach((x) => {
 
 		if (holding_keys.includes(x)) {
 			// do nothing
 		} else {
 			holding_keys.push(x);
+			console.log("current_keys", holding_keys);
+
 		}
 
 	})
-	// xmlHttp.open( "GET", send_query, true ); // false for synchronous request
-	// xmlHttp.send( "hhhhhh");
+
+
+	var xmlHttp = new XMLHttpRequest();
+	const send_query = theUrl + holding_keys.join("&key=");
+	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
+	xmlHttp.send( "hhhhhh");
 	
 };
 
 
-function releaseKey(pressedKeys){
-
+function removeItemOnce(arr, value) {
+  var index = arr.indexOf(value);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
 }
 
 
-keyboardJS.bind(e => pressKey(e.pressedKeys), e => pressKey(e.pressedKeys));
+function releaseKey(pressedKeys){
+
+	var current_keys =  parse_nonuse_tag(pressedKeys);
+
+	var to_be_deleted = [];
+
+	holding_keys.forEach((x) => {
+		if (current_keys.includes(x)) {
+			// do nothing
+		} else {
+			to_be_deleted.push(x);
+		}
+	})
+	
+	to_be_deleted.forEach(x => {
+		removeItemOnce(holding_keys, x);
+	});
+
+	var xmlHttp = new XMLHttpRequest();
+	const send_query = theUrl + holding_keys.join("&key=");
+	xmlHttp.open( "GET", send_query, true ); // false for synchronous request
+	xmlHttp.send( "hhhhhh");
+	
+}
+
+
+
+
+keyboardJS.bind(e => pressKey(e.pressedKeys), e => releaseKey(e.pressedKeys));
 // keyboardJS.bind(e => currentKey(e.pressedKeys), e => currentKey(e.pressedKeys));
+
+const button = document.getElementById('thebutton');
+button.onclick = function(){
+	// const text = await navigator.clipboard.readText();
+	// console.log(text);
+
+	navigator.clipboard.readText()
+	.then(text => {
+		var xmlHttp = new XMLHttpRequest();
+		// text = text.replaceAll('\n', '%0A');
+		console.log(text);
+		text = encodeURIComponent(text)
+		console.log(text);
+		const send_query = "http://localhost:8340/paste?text=" + text;
+		// console.log(text.replaceAll('\n', '%0A'));
+		xmlHttp.open( "GET", send_query, true ); // false for synchronous request
+		xmlHttp.send( "paste stuff");
+	})
+	.catch(err => {
+		console.error('Failed to read clipboard contents: ', err);
+	});
+}
+
 

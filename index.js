@@ -47,7 +47,7 @@ app.get('/c', function (req, res) {
 
 			default:
 				if (keys_slot.length <= 2){
-					keys_slot.push(utils.look_up_code(key_name));
+					keys_slot.push(utils.plain_text_to_order(key_name));
 					break
 				} else {
 					// not able to load so much keys
@@ -75,26 +75,62 @@ app.get('/c', function (req, res) {
 	res.send('combo reived');
 
 })
+
+app.get('/test', function (req, res){
+	var pressed_key = new Uint16Array([1,1,4,0,0]);
+	console.log(pressed_key);
+	ffe3_characterist.write(pressed_key);
+	
+
+	var pressed_key = new Uint16Array([1,0,0,0,0]);
+	console.log(pressed_key);
+	ffe3_characterist.write(pressed_key);
+	
+	res.send('done test');
+	
+
+});
+
+app.get('/paste', function (req, res){
+	var full_paste = req.query.text;
+
+	// console.log(full_paste);
+
+	// var full_paste = "aaaa \n return /[0-9a-z\[\]';\.,\-=\\\/`]/.test(text);";
+	
+	console.log(full_paste);
+	var command_list = utils.paste_control(full_paste);
+	for (let index = 0; index < command_list.length; index++) {
+		const key_code = command_list[index];
+		ffe3_characterist.write(key_code);
+	}
+	res.send("received");
+});
+
+app.get('/aaa', function (req, res) {
+	console.log('aaaaaaa');
+	res.send("dwdwfwd");
+});
+
 //
 app.get('/h', function (req, res) {
 		//res.send();
 		// res.sendFile('keyboard_page.html',  { root: __dirname });
-		// console.log(req.query['key']);
+
 		var id = req.query.key;
+		var key_code;
 		if (typeof id != "object"){
 				id = [id];
 		}
 
-		var key_code = 0
+		console.log(id);
+
 		if (id) {
 				if (id.length==1){
-						key_code = utils.look_up_code(id[0])
-						// console.log(key_code);
-
+						key_code = utils.plain_text_to_order(id)
 				} else {
-						
 						// console.log("multiple_keys", id[id.length-1]);
-						key_code = utils.look_up_code(id[id.length-1]);
+						key_code = utils.plain_text_to_order(id);
 						// console.log(utils.look_up_code(id[0]));
 						// console.log(key_code);
 				}
@@ -103,15 +139,8 @@ app.get('/h', function (req, res) {
 
 		if (ffe3_characterist != null){
 				console.log(req.params.id + " got");
-
-				let pressed_key = new Uint16Array([1,0, key_code,0,0]);
-				console.log(pressed_key);
-				ffe3_characterist.write(pressed_key);
-
-
-				let release_key = new Uint16Array([1,0,0,0,0]);
-				ffe3_characterist.write(release_key);
-
+				console.log(key_code);
+				ffe3_characterist.write(key_code);
 		} else {
 			// console.log("ffe3 characteristics is null");
 		}

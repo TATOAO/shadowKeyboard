@@ -215,7 +215,7 @@ key_code:
   esc: '41'
   backspace: '42'
   tab: '43'
-  spacebar: '44'
+  space: '44'
   '-': '45'
   =: '46'
   '[': '47'
