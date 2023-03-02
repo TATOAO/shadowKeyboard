@@ -62,7 +62,7 @@ app.get('/c', function (req, res) {
 		}
 
 		let pressed_key = new Uint16Array([1, modifier_num, keys_slot[0],  keys_slot[1],keys_slot[2]]);
-		console.log(pressed_key)
+		// console.log(pressed_key)
 		ffe3_characterist.write(pressed_key);
 
 		let release_key = new Uint16Array([1,0,0,0,0]);
@@ -78,12 +78,12 @@ app.get('/c', function (req, res) {
 
 app.get('/test', function (req, res){
 	var pressed_key = new Uint16Array([1,1,4,0,0]);
-	console.log(pressed_key);
+	// console.log(pressed_key);
 	ffe3_characterist.write(pressed_key);
 	
 
 	var pressed_key = new Uint16Array([1,0,0,0,0]);
-	console.log(pressed_key);
+	// console.log(pressed_key);
 	ffe3_characterist.write(pressed_key);
 	
 	res.send('done test');
@@ -138,8 +138,8 @@ app.get('/h', function (req, res) {
 		}
 
 		if (ffe3_characterist != null){
-				console.log(req.params.id + " got");
-				console.log(key_code);
+				// console.log(req.params.id + " got");
+				// console.log(key_code);
 				ffe3_characterist.write(key_code);
 		} else {
 			// console.log("ffe3 characteristics is null");
@@ -165,6 +165,7 @@ noble.on('scanStop', async (event) => {
 
 
 noble.on('discover', async (peripheral) => {
+	console.log("xxxxxxxxxxxxxx");
 
 	if(peripheral.advertisement.localName){
 			console.log(peripheral.advertisement.localName);

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Title of the document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="keyboard.min.js" type="text/javascript"></script>
 	<!-- <script src="keyboard_main.js" type="text/javascript"></script> -->
 	<script src="utils.js" type="module"></script>
@@ -12,7 +13,7 @@
 
 </head>
 
-<button tabindex = 1 id="thebutton" type="">paste to Computor A</button>
+<!-- <button tabindex = 1 id="thebutton" type="">paste to Computor A</button> -->
 
 <body>
     <script>
@@ -23,11 +24,20 @@
             event.returnValue = 'jjjjj';
         });
 
-		window.keydown(function(event){
-			if(event.keyCode == 9){
-				evenet.preventDefault();
-			}
-		})
+
+		$(document).keydown(function (e) {
+		var jqTarget = $(e.target);
+		if (e.keyCode == 9) {
+			e.preventDefault();
+
+		}
+
+		if (e.keyCode == 20) {
+			e.preventDefault();
+
+		}
+
+});
     </script>
 Content of the document......
 </body>

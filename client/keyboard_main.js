@@ -106,8 +106,7 @@ function pressKey(pressedKeys){
 			// do nothing
 		} else {
 			holding_keys.push(x);
-			console.log("current_keys", holding_keys);
-
+		// 	console.log("current_keys", holding_keys);
 		}
 
 	})
@@ -155,14 +154,7 @@ function releaseKey(pressedKeys){
 	
 }
 
-
-
-
-keyboardJS.bind(e => pressKey(e.pressedKeys), e => releaseKey(e.pressedKeys));
-// keyboardJS.bind(e => currentKey(e.pressedKeys), e => currentKey(e.pressedKeys));
-
-const button = document.getElementById('thebutton');
-button.onclick = function(){
+const paste_activate_function = function(){
 	// const text = await navigator.clipboard.readText();
 	// console.log(text);
 
@@ -170,9 +162,7 @@ button.onclick = function(){
 	.then(text => {
 		var xmlHttp = new XMLHttpRequest();
 		// text = text.replaceAll('\n', '%0A');
-		console.log(text);
 		text = encodeURIComponent(text)
-		console.log(text);
 		const send_query = "http://localhost:8340/paste?text=" + text;
 		// console.log(text.replaceAll('\n', '%0A'));
 		xmlHttp.open( "GET", send_query, true ); // false for synchronous request
@@ -183,4 +173,29 @@ button.onclick = function(){
 	});
 }
 
+keyboardJS.bind('capslock', 
+	(e) => {
+		console.log("ctrl then space");	
+		// paste_activate_function();
+		pressKey(["ctrl", "space"])
+	},
+
+	(e) => { 
+		releaseKey([]);	
+	}
+);
+
+keyboardJS.bind('ctrl + shift + q', (e) => {
+	console.log("the function is activated");	
+	paste_activate_function();
+});
+
+keyboardJS.bind(e => {
+	pressKey(e.pressedKeys)
+
+}, e => releaseKey(e.pressedKeys));
+// keyboardJS.bind(e => currentKey(e.pressedKeys), e => currentKey(e.pressedKeys));
+
+// const button = document.getElementById('thebutton');
+// button.onclick = function () {
 

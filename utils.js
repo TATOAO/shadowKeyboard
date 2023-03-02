@@ -18,6 +18,8 @@ const sentPress = (characteristic) => {
 
 const test_console = (text) => {console.log(text);}
 
+
+
 const check_english_text = (text) => {
 		return /^[\x00-\x7F]*$/.test(text);
 	}
@@ -113,7 +115,7 @@ const generate_keypress_orders =  (input_slice) => {
 				}
 			}
 			// plain_text_to_order
-			console.log(single_order);
+			// console.log(single_order);
 			total_orders = total_orders.concat(plain_text_to_order(single_order));
 			total_orders.push(plain_text_to_order([]));
 		}
